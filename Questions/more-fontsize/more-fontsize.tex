@@ -1,0 +1,26 @@
+\documentclass[a4paper]{article}
+
+\usepackage{lipsum}
+\usepackage{newtxtext}
+\usepackage[17pt]{extsizes}
+
+\title{\bfseries Changing the font size in  \LaTeX{}}
+\author{Elegant\LaTeX{}}
+
+\renewcommand{\ttdefault}{pcr}
+
+\begin{document}
+
+\maketitle
+
+\begin{quote}
+The sizes available are 8pt,9pt,10pt,11pt,12pt,14pt,17pt, and 20pt. There should be no need to change any other part of your document.
+\end{quote}
+
+\begin{verbatim}
+\usepackage[20pt]{extsizes}
+\end{verbatim}
+
+\lipsum[3]
+
+\end{document}

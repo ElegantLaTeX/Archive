@@ -1,0 +1,75 @@
+\documentclass{minimal}
+
+\usepackage{newtxtext}
+\usepackage[UTF8]{ctex}
+
+\usepackage{lipsum}
+\usepackage[most]{tcolorbox}
+% user defined color
+\usepackage{xcolor}
+\definecolor{thinkcolor}{RGB}{227,196,144}
+\definecolor{observecolor}{RGB}{153,201,227}
+\definecolor{explorecolor}{RGB}{178,217,200}
+
+\tcbset{
+    common/.style={
+		enhanced,
+		arc=0mm,
+		fonttitle=\large\bfseries,
+		coltitle=black,
+		attach boxed title to top left={xshift=0mm,
+										yshift=-0.50mm},
+		boxed title style={
+			skin=enhancedfirst jigsaw,
+			size=small,
+			arc=5mm,
+			bottom=0mm,
+			left=8mm,
+			right=18mm,
+			top=1mm},
+			boxrule=0pt,
+			frame hidden},
+    thinkstyle/.style={
+		common,
+		colbacktitle=thinkcolor,
+		colframe=thinkcolor,
+		colback=thinkcolor!40,
+		borderline north={4pt}{0pt}{thinkcolor}},
+	observestyle/.style={
+		common,
+		colbacktitle=observecolor,
+		colframe=observecolor,
+		colback=observecolor!40,
+		borderline north={4pt}{0pt}{observecolor}}
+}
+
+\newtcolorbox{think}{thinkstyle,title=思考}
+\newtcolorbox{observe}{observestyle,title=观察}
+\newtcolorbox{custom}[2][gray]{
+	common,
+	title=#2,
+	colbacktitle=#1,
+	colframe=#1,
+	colback=#1!40,
+	borderline north={4pt}{0pt}{#1}}
+
+
+\begin{document}
+
+\begin{think}
+	\lipsum[2].
+\end{think}
+
+\begin{observe}
+	\lipsum[2].
+\end{observe}
+
+\begin{custom}{探索}
+	\lipsum[2].
+\end{custom}
+
+\begin{custom}[explorecolor]{探索}
+	\lipsum[2].
+\end{custom}
+
+\end{document}
